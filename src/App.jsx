@@ -21,11 +21,13 @@ function App() {
       } else{
         dispatch(logout())
       }
+    }).catch((error)=>{
+      console.log('app ',error)
     })
     .finally(()=> setLoading(false))
-  },[userData])
+  },[])
 
-  return !loading ? (
+  return !loading ?
     <div className='min-h-screen flex flex-wrap
     content-between bg-gray-400'>
     <div className='w-full block'>
@@ -36,7 +38,7 @@ function App() {
      < Footer />
     </div>
     </div>
-  ) : null
+   : null
 }
 
 export default App
